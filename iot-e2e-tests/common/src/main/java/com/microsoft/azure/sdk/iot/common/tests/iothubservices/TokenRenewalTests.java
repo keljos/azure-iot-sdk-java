@@ -177,7 +177,7 @@ public class TokenRenewalTests extends IntegrationTest
         for (IotHubClientProtocol protocol: IotHubClientProtocol.values())
         {
             clients.add(createDeviceClient(protocol));
-            if (protocol == HTTPS)
+            if (protocol == HTTPS || protocol == MQTT_WS || protocol == AMQPS_WS)
             {
                 InternalClient client = createDeviceClient(protocol);
                 ProxySettings proxySettings = new ProxySettings(testProxy);

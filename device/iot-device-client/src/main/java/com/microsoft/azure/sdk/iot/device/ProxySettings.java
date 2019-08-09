@@ -91,11 +91,17 @@ public class ProxySettings
         }
     }
 
+    /**
+     * @return the saved proxy username
+     */
     public String getUsername()
     {
         return this.username;
     }
 
+    /**
+     * @return the saved proxy password
+     */
     public char[] getPassword()
     {
         return this.password;
