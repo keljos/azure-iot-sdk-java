@@ -95,7 +95,7 @@ public class SendEventWithProxy
                             + "The program should be called with the following args: \n"
                             + "1. [Device connection string] - String containing Hostname, Device Id & Device Key in one of the following formats: HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key> or HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>;GatewayHostName=<gateway> \n"
                             + "2. [number of requests to send]\n"
-                            + "3. (https | amqps_ws)\n"
+                            + "3. (https | amqps_ws | mqtt_ws)\n"
                             + "4. proxy hostname (ie: '127.0.0.1', 'localhost', etc.)\n"
                             + "5. proxy port number\n"
                             + "6. (optional) username for the proxy \n"
@@ -137,7 +137,7 @@ public class SendEventWithProxy
         }
         else if (protocolStr.toLowerCase().equals("mqtt_ws"))
         {
-            throw new UnsupportedOperationException("MQTT_WS does not have proxy support");
+            protocol = IotHubClientProtocol.MQTT_WS;
         }
         else
         {
@@ -146,7 +146,7 @@ public class SendEventWithProxy
                             + "The program should be called with the following args: \n"
                             + "1. [Device connection string] - String containing Hostname, Device Id & Device Key in one of the following formats: HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key> or HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>;GatewayHostName=<gateway> \n"
                             + "2. [number of requests to send]\n"
-                            + "3. (https | amqps_ws)\n"
+                            + "3. (https | amqps_ws | mqtt_ws)\n"
                             + "4. proxy hostname (ie: '127.0.0.1', 'localhost', etc.)\n"
                             + "5. proxy port number\n"
                             + "6. (optional) username for the proxy \n"
